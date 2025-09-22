@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍺 Beer Carbonation Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍺 Beer Carbonation Calculator</h1>
+            <p>Calculate optimal temperature and pressure for perfect carbonation</p>
+        </header>
+
+        <div class="calculator-tabs">
+            <button class="tab-button active" onclick="showTab('pressure')">Calculate Pressure</button>
+            <button class="tab-button" onclick="showTab('temperature')">Calculate Temperature</button>
+            <button class="tab-button" onclick="showTab('styles')">Beer Styles</button>
+        </div>
+
+        <!-- Pressure Calculator Tab -->
+        <div id="pressure-tab" class="tab-content active">
+            <div class="card">
+                <h2>Calculate Required Pressure</h2>
+                <div class="input-group">
+                    <label for="target-volumes-pressure">Target CO₂ Volume:</label>
+                    <input type="number" id="target-volumes-pressure" step="0.1" min="1" max="5" value="2.6">
+                    <span class="unit">volumes</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="temperature">Temperature:</label>
+                    <input type="number" id="temperature" step="0.1" value="4">
+                    <select id="temp-unit">
+                        <option value="celsius">°C</option>
+                        <option value="fahrenheit">°F</option>
+                    </select>
+                </div>
+
+                <button onclick="calculatePressure()" class="calculate-btn">Calculate Pressure</button>
+
+                <div id="pressure-results" class="results" style="display: none;">
+                    <div class="result-item">
+                        <span class="label">Required Pressure:</span>
+                        <span id="result-pressure" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Natural CO₂ Solubility:</span>
+                        <span id="result-natural" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Additional CO₂ Needed:</span>
+                        <span id="result-additional" class="value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Temperature Calculator Tab -->
+        <div id="temperature-tab" class="tab-content">
+            <div class="card">
+                <h2>Calculate Optimal Temperature</h2>
+                <div class="input-group">
+                    <label for="target-volumes-temp">Target CO₂ Volume:</label>
+                    <input type="number" id="target-volumes-temp" step="0.1" min="1" max="5" value="2.4">
+                    <span class="unit">volumes</span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="pressure">Available Pressure:</label>
+                    <input type="number" id="pressure" step="0.1" value="15">
+                    <select id="pressure-unit">
+                        <option value="psi">PSI</option>
+                        <option value="bar">bar</option>
+                    </select>
+                </div>
+
+                <button onclick="calculateTemperature()" class="calculate-btn">Calculate Temperature</button>
+
+                <div id="temperature-results" class="results" style="display: none;">
+                    <div class="result-item">
+                        <span class="label">Optimal Temperature:</span>
+                        <span id="result-temperature" class="value"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Calculation Accuracy:</span>
+                        <span id="result-accuracy" class="value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beer Styles Tab -->
+        <div id="styles-tab" class="tab-content">
+            <div class="card">
+                <h2>Beer Style Carbonation Guide</h2>
+                <div id="beer-styles-grid" class="styles-grid">
+                    <!-- Beer styles will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ for brewers. Results are estimates - verify with your equipment.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
