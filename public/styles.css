@@ -284,11 +284,15 @@ footer {
     }
     
     header {
-        padding: 30px 20px;
+        padding: 15px 10px;
     }
     
     header h1 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    header h2 {
+        font-size: 1.3rem;
     }
     
     .tab-content {
@@ -307,12 +311,24 @@ footer {
     
     .input-group label {
         min-width: auto;
+        margin-bottom: 5px;
     }
     
     /* Keep input and unit together even on mobile */
     .input-with-unit {
         display: flex !important;
         gap: 8px;
+        width: 100%;
+    }
+    
+    .input-with-unit input {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .input-with-unit select {
+        min-width: 70px;
+        flex-shrink: 0;
     }
     
     .result-item {
