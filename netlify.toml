@@ -1,0 +1,33 @@
+[build]
+  # Directory with the static files
+  publish = "public"
+  
+  # Build command (not needed for this static site)
+  command = "echo 'Static site - no build needed'"
+
+[functions]
+  # Directory with the serverless functions
+  directory = "netlify/functions"
+
+[[redirects]]
+  # SPA redirect - catch all routes and serve index.html
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Apply these headers to all routes
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  # Headers for API functions
+  for = "/.netlify/functions/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"

@@ -33,7 +33,7 @@ async function calculatePressure() {
     }
     
     try {
-        const response = await fetch('/api/calculate-pressure', {
+        const response = await fetch('/.netlify/functions/calculate-pressure', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -76,7 +76,7 @@ async function calculateTemperature() {
     }
     
     try {
-        const response = await fetch('/api/calculate-temperature', {
+        const response = await fetch('/.netlify/functions/calculate-temperature', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -107,7 +107,7 @@ async function calculateTemperature() {
 // Load beer styles
 async function loadBeerStyles() {
     try {
-        const response = await fetch('/api/beer-styles');
+        const response = await fetch('/.netlify/functions/beer-styles');
         beerStyles = await response.json();
         
         const grid = document.getElementById('beer-styles-grid');

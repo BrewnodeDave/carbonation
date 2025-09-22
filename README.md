@@ -23,15 +23,29 @@ npm install
 
 ## Usage
 
-### Web Application (Recommended)
+### Netlify Deployment (Recommended for Production)
 
-Run the modern web interface:
+Deploy to Netlify for a fast, global CDN-powered web application:
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YOUR_USERNAME/carbonation)
+
+See [NETLIFY_DEPLOY.md](NETLIFY_DEPLOY.md) for detailed deployment instructions.
+
+### Web Application (Local Development)
+
+Run the modern web interface locally:
 
 ```bash
 npm run web
 ```
 
 Then open your browser to `http://localhost:3000`
+
+For Netlify-compatible local development:
+```bash
+npm install -g netlify-cli
+npm run netlify-dev
+```
 
 The web app features:
 - **Interactive Calculator**: Real-time pressure and temperature calculations
