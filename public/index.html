@@ -30,11 +30,13 @@
                 
                 <div class="input-group">
                     <label for="temperature">Temperature:</label>
-                    <input type="number" id="temperature" step="0.1" value="4">
-                    <select id="temp-unit">
-                        <option value="celsius">°C</option>
-                        <option value="fahrenheit">°F</option>
-                    </select>
+                    <div class="input-with-unit">
+                        <input type="number" id="temperature" step="0.1" value="4">
+                        <select id="temp-unit">
+                            <option value="celsius">°C</option>
+                            <option value="fahrenheit">°F</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button onclick="calculatePressure()" class="calculate-btn">Calculate Pressure</button>
@@ -68,11 +70,13 @@
                 
                 <div class="input-group">
                     <label for="pressure">Available Pressure:</label>
-                    <input type="number" id="pressure" step="0.1" value="15">
-                    <select id="pressure-unit">
-                        <option value="psi">PSI</option>
-                        <option value="bar">bar</option>
-                    </select>
+                    <div class="input-with-unit">
+                        <input type="number" id="pressure" step="0.1" value="15">
+                        <select id="pressure-unit">
+                            <option value="psi">PSI</option>
+                            <option value="bar">bar</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button onclick="calculateTemperature()" class="calculate-btn">Calculate Temperature</button>
