@@ -98,8 +98,9 @@ class CarbonationCalculator {
     let bestTemp = null;
     let minDifference = Infinity;
     
-    // Search temperature range from 0°C to 15°C (typical serving range)
-    for (let temp = 0; temp <= 15; temp += 0.1) {
+    // Search temperature range from -5°C to 20°C (extended range for all scenarios)
+    // This covers freezing temperatures to warmer serving conditions
+    for (let temp = -5; temp <= 20; temp += 0.1) {
       const result = this.calculateRequiredPressure(targetVolumes, temp);
       const difference = Math.abs(result.bar - pressureBar);
       
