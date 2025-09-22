@@ -189,7 +189,11 @@ carbonation/
 
 ## License
 
-MIT License - see package.json for details
+This project is licensed under the **"Buy Me A Beer" License** 🍺
+
+See the [LICENSE](LICENSE) file for the full license text.
+
+**TL;DR**: You can do whatever you want with this code. If we meet someday and you think it's worth it, you can buy me a beer in return!
 
 ## Disclaimer
 

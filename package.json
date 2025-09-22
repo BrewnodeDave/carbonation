@@ -15,7 +15,7 @@
   },
   "keywords": ["beer", "carbonation", "brewing", "calculator", "co2"],
   "author": "",
-  "license": "MIT",
+  "license": "Buy Me A Beer",
   "dependencies": {
     "readline-sync": "^1.4.10",
     "express": "^4.18.2"
