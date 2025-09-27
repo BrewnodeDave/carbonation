@@ -10,6 +10,7 @@
     "demo": "node demo.js",
     "web": "node server.js",
     "web-dev": "node --watch server.js",
+    "web-test": "node web-test.js",
     "netlify-dev": "netlify dev",
     "build": "echo 'Static site - no build needed'"
   },

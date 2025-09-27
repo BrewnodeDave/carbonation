@@ -30,6 +30,22 @@ exports.handler = async (event, context) => {
 
   try {
     const { targetVolumes, temperature } = JSON.parse(event.body);
+
+    // Validate parameters
+    if (
+      typeof targetVolumes !== 'number' ||
+      typeof temperature !== 'number' ||
+      isNaN(targetVolumes) ||
+      isNaN(temperature) ||
+      targetVolumes < 1.0 || targetVolumes > 5.0 ||
+      temperature < 0 || temperature > 40
+    ) {
+      return {
+      statusCode: 400,
+      headers,
+      body: JSON.stringify({ error: 'Invalid parameters: targetVolumes must be 1.0-5.0, temperature must be 0-40 (°C)' })
+      };
+    }
     
     if (!targetVolumes || temperature === undefined) {
       return {
